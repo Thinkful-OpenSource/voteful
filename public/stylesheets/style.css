@@ -131,3 +131,7 @@ header {
 .comments p {
   display:inline;
 }
+
+.upVote, .downVote, .comments { 
+	cursor:pointer;
+}

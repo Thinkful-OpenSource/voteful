@@ -1,6 +1,15 @@
 /*global angular:false */
 angular.module('voteful', ['ngMaterial'])
 .controller('HomeController', ['$scope', '$http', '$mdDialog', '$mdBottomSheet', function($scope, $http, $mdDialog, $mdBottomSheet){
+  $scope.upVote = function(){};
+  
+  $scope.downVote = function(){};
+  
+  $scope.openProject = function(){};
+  
+  $scope.showComments = function(){
+  $mdDialog.show();  
+  };
   
 }]);
   // $scope.report = function(type, message, user){
