@@ -9,13 +9,11 @@ var knex = require('knex')({
     connection: process.env.PG_CONNECTION_STRING
 });
 var bookshelf = require('bookshelf')(knex);
-app.set('bookshelf', bookshelf);
-
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
+app.set('bookshelf', bookshelf);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
