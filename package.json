@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "postinstall": "./note_modules/bower/bin/bower install"
   },
   "dependencies": {
     "body-parser": "~1.8.1",
@@ -15,12 +15,7 @@
     "knex": "^0.7.3",
     "morgan": "~1.3.0",
     "pg": "^4.1.1",
-    "serve-favicon": "~2.1.3"
-  },
-  "devDependencies": {
+    "serve-favicon": "~2.1.3",
     "bower": "^1.3.12"
-  },
-  "scripts": {
-    "postinstall": "./note_modules/bower/bin/bower install"
   }
 }
