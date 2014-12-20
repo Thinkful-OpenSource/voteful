@@ -3,7 +3,7 @@ extends layout
 block content
   section(ng-controller='HomeController')
     md-content(id='projectResults',layout='column', layout-fill)
-      md-whiteframe(class='frames md-whiteframe-z1', layout='row', layout-align='space-between center', ng-click=' ', ng-mouseenter='expand()', ng-mouseleave='shrink()')
+      md-whiteframe(ng-class='{"md-whiteframe-z4": project.up, "md-whitframe-z1": !project.up}', class='frames', layout='row', layout-align='space-between center', ng-click=' ', ng-mouseenter='project.up = true', ng-mouseleave='project.up = false')
         div(class='votes') 
           span(class="ion-chevron-up")
           p 12
@@ -12,7 +12,7 @@ block content
         div(class='comments') 
           span(class="ion-ios-chatbubble")
           p 12
-      md-whiteframe(class='frames md-whiteframe-z1', layout='row', layout-align='space-between center', ng-click=' ', ng-mouseenter='expand()', ng-mouseleave='shrink()')
+      md-whiteframe(ng-class='{"md-whiteframe-z4": project.up, "md-whitframe-z1": !project.up}', class='frames', layout='row', layout-align='space-between center', ng-click=' ', ng-mouseenter='project.up = true', ng-mouseleave='project.up = false')
         div(class='votes') 
           span(class="ion-chevron-up")
           p 12

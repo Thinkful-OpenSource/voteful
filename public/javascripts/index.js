@@ -2,12 +2,6 @@
 angular.module('voteful', ['ngMaterial'])
 .controller('HomeController', ['$scope', '$http', '$mdDialog', '$mdBottomSheet', function($scope, $http, $mdDialog, $mdBottomSheet){
   
-  $scope.expand = function($event) {
-    $event.target.removeClass('md-whiteframe-z1').addClass('md-whiteframe-z4');
-  };
-  $scope.shrink = function($event) {
-    // $event.target.removeClass('md-whiteframe-z4').addClass('md-whiteframe-z1');
-  };
 }]);
   // $scope.report = function(type, message, user){
   //   function success(data){
