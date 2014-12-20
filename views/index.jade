@@ -2,9 +2,23 @@ extends layout
 
 block content
   section(ng-controller='HomeController')
-    md-content(id='projectResults')
-      div(layout='column', layout-fill)
-        md-whiteframe(class='frames md-whiteframe-z1', layout='row', layout-align='space-between center', ng-repeat='project in projects', ng-click='showLinkDetails(link.id)', ng-mouseenter='expand()', ng-mouseleave='shrink()')
-          p
-            a(href='{{project.url}}') {{project.title}}
-          p {{link.keyword_list}}
+    md-content(id='projectResults',layout='column', layout-fill)
+      md-whiteframe(class='frames md-whiteframe-z1', layout='row', layout-align='space-between center', ng-click=' ', ng-mouseenter='expand()', ng-mouseleave='shrink()')
+        div(class='votes') 
+          span(class="ion-chevron-up")
+          p 12
+          span(class="ion-chevron-down")
+        p(class='projectName') project name
+        div(class='comments') 
+          span(class="ion-ios-chatbubble")
+          p 12
+      md-whiteframe(class='frames md-whiteframe-z1', layout='row', layout-align='space-between center', ng-click=' ', ng-mouseenter='expand()', ng-mouseleave='shrink()')
+        div(class='votes') 
+          span(class="ion-chevron-up")
+          p 12
+          span(class="ion-chevron-down")
+        p(class='projectName') project name
+        div(class='comments') 
+          span(class="ion-ios-chatbubble")
+          p 12
+      

@@ -1,7 +1,9 @@
 doctype html
 html(ng-app='voteful')
-  head 
+  head
     title= title
+    link(rel='stylesheet', href='/angular-material/angular-material.css')
+    link(rel='stylesheet', href='/ionicons/css/ionicons.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/angular/angular.min.js')
     script(src='/hammerjs/hammer.min.js')
@@ -19,7 +21,6 @@ html(ng-app='voteful')
       block content
     footer(id='logoFooter')
       img(id='slackLogo', src='images/slack.png', alt='slack logo')
-      span(class='gray-text') Options
       img(id='thinkfulLogo', src='images/thinkful.svg' alt='thinkful logo')
 //         script(type='text/ng-template', id='bottomSheet.html')
 //     <md-bottom-sheet class='md-grid' ng-controller='footerController' >

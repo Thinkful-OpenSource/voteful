@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "~0.6.1"
+    "angular-material": "~0.6.1",
+    "ionicons": "~2.0.0"
   }
 }

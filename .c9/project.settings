@@ -21,7 +21,7 @@
     },
     "run": {
         "@path": "/.c9/runners",
-        "@runner": "Node.js (default)",
+        "@runner": "Shell command",
         "configs": {
             "@inited": "true",
             "json()": {}

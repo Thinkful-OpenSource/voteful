@@ -4,6 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var knex = require('knex')({
+    client: 'pg',
+    connection: process.env.PG_CONNECTION_STRING
+});
+var bookshelf = require('bookshelf')(knex);
+app.set('bookshelf', bookshelf);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
