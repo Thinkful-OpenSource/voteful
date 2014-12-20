@@ -1,7 +1,128 @@
 doctype html
-html
-  head
+html(ng-app='voteful')
+  head 
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/angular/angular.min.js')
+    script(src='/hammerjs/hammer.min.js')
+    script(src='/angular-aria/angular-aria.min.js')
+    script(src='/angular-animate/angular-animate.min.js')
+    script(src='/angular-material/angular-material.min.js')
+    script(src='/javascripts/index.js')
   body
-    block content
+    div(id='pageContent')
+      header
+        div(id='headerText')
+          h1 Voteful
+          p brought to you by Thinkful
+    div(id='mainContent')
+      block content
+    footer(id='logoFooter')
+      img(id='slackLogo', src='images/slack.png', alt='slack logo')
+      span(class='gray-text') Options
+      img(id='thinkfulLogo', src='images/thinkful.svg' alt='thinkful logo')
+//         script(type='text/ng-template', id='bottomSheet.html')
+//     <md-bottom-sheet class='md-grid' ng-controller='footerController' >
+//       <md-list id='bottomList' ng-mouseleave='mouseOut()'>
+//         <md-item>
+//           <md-button class='footLink md-raised' ng-click='addLink(); listItemClick()'>
+//             <span class='icon ion-plus massive' style='display:block;'></span>
+//             <p style='font-size:16px;'>Add Link</p>
+//           </md-button>
+//         </md-item>
+//         <md-item>
+//           <md-button class='footLink md-raised' ng-click='changeLink(); listItemClick()'>
+//             <span class='icon ion-edit massive'></span>
+//             <p>Edit a Link</p>
+//           </md-button>
+//         </md-item>
+//         <md-item>
+//           <md-button class='footLink md-raised' ng-click='bugReport(); listItemClick()'>
+//             <span class='icon ion-bug massive'></span>
+//             <p>Report a Bug</p>
+//           </md-button>
+//         </md-item>
+// 	      <md-item>
+// 	        <md-button href='http://thinkful.com' class='footLink md-raised'>
+// 	          <span class='icon ion-home massive'></span>
+// 	          <p>Thinkful</p>
+// 	        </md-button>
+// 	      </md-item>
+// 	      <md-item>
+// 	        <md-button ng-click='devTeam(); listItemClick()' class='footLink md-raised'>
+// 	          <span class='icon ion-social-freebsd-devil massive'></span>
+// 	          <p>Dev Team</p>
+// 	        </md-button>
+// 	      </md-item>
+// 	      <md-item>
+// 	        <md-button ng-click='scrape(); listItemClick()' class='footLink md-raised'>
+// 	          <span class='icon ion-social-freebsd-devil massive'></span>
+// 	          <p>Scrape the Jar</p>
+// 	        </md-button>
+// 	      </md-item>
+//       </md-list>
+//     </md-bottom-sheet>
+// 	</script>
+//   <script type='text/ng-template' id='add-link.html'>
+//     <md-dialog>
+//       <md-content>
+//         <span class='icon ion-close-round close-button' ng-click='close()'></span>
+//         <h3>Add Link</h3>
+//         <md-text-float ng-model='url' label='Enter Url' autofocus></md-text-float>
+//       </md-content>
+//       <div class='md-actions'>
+//         <md-button ng-click='save(url)'>Save Link</md-button>
+//       </div>
+//     </md-dialog>
+//   </script>
+//   <script type='text/ng-template' id='change-link.html'>
+//     <md-dialog>
+//       <md-content>
+//         <span class='icon ion-close-round close-button' ng-click='close()'></span>
+//         <h3>Change Link form</h3>
+//         <md-text-float ng-model='title' label='Change title' autofocus></md-text-float>
+//         <md-text-float ng-model='keyword' label='Add Keywords'></md-text-float>
+//       </md-content>
+//       <div class='md-actions'>
+//         <md-button ng-click='save(title,keyword)'>Save Link</md-button>
+//       </div>
+//     </md-dialog>
+//   </script>
+//   <script type='text/ng-template' id='add-bug.html'>
+//     <md-dialog>
+//       <md-content>
+//         <span class='icon ion-close-round close-button' ng-click='close()'></span>
+//         <h3>Report a bug or Request a feature</h3>
+//         <md-radio-group ng-model='selectedType'>
+//           <md-radio-button ng-repeat='type in types' ng-value='type.value' aria-label='{{type.name}}'>
+//             {{type.name}}
+//           </md-radio-button>
+//         </md-radio-group>
+//         <textarea ng-model='message' placeholder='What can we do better?' autofocus></textarea>
+//         <md-text-float ng-model='user' label='User (optional)'></md-text-float>
+//       </md-content>
+//       <div class='md-actions'>
+//         <md-button ng-click='report(selectedType,message,user)'>Report Bug</md-button>
+//       </div>
+//     </md-dialog>
+//   </script>
+//   <script type='text/ng-template' id='dev-team.html'>
+//     <md-dialog>
+//       <md-content>
+//         <span class='icon ion-close-round close-button' ng-click='close()'></span>
+//         <h3>Development Team</h3>
+//         <md-list id='devTeam'>
+//         <md-item class='devTeamItem'>
+// 	        <md-button href='https://github.com/SnareChops' class='md-raised'>@snarechops
+// 	        </md-button>
+// 	      </md-item>
+// 	     <md-item class='devTeamItem'>
+// 	        <md-button href='https://github.com/gabeaustin' class='md-raised'>@gabe1
+// 	        </md-button>
+// 	      </md-item>
+// 	     <md-item class='devTeamItem'>
+// 	        <md-button href='https://github.com/aric87' class='md-raised'>@aric87
+// 	        </md-button>
+// 	      </md-item>
+//     </md-dialog>
+//   </script>

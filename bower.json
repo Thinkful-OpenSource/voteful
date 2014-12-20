@@ -1,0 +1,20 @@
+{
+  "name": "voteful",
+  "version": "0.1",
+  "homepage": "https://github.com/Thinkful-OpenSource/voteful",
+  "authors": [
+    "Scott Robinson <snare_chops@yahoo.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.6.1"
+  }
+}
