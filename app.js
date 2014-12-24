@@ -1,18 +1,15 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var knex = require('knex')({
-    client: 'pg',
-    connection: process.env.PG_CONNECTION_STRING
-});
-var bookshelf = require('bookshelf')(knex);
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
-var app = express();
+var express = require('express'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    bookshelf = require('./db/bookshelf'),
+    routes = require('./routes/index'),
+    users = require('./routes/users'),
+    projects = require('./routes/project'),
+    app = express();
+    
 app.set('bookshelf', bookshelf);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/projects', projects)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

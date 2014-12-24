@@ -1,16 +1,13 @@
 extends layout
 
 block content
-  section(ng-controller='HomeController')
-    md-content(id='projectResults',layout='column', layout-fill)
-      md-whiteframe(ng-class='{"md-whiteframe-z4": project.up, "md-whitframe-z1": !project.up}', class='frames', layout='row', layout-align='space-between center', ng-click=' ', ng-mouseenter='project.up = true', ng-mouseleave='project.up = false')
-        div(class='votes') 
-          span(class="ion-chevron-up upVote" ng-click="upVote()")
-          p 12
-          span(class="ion-chevron-down downVote" ng-click="downVote()")
-        p(class='projectName' ng-click="openProject()") project name
-        div(class='comments' ng-click="showComments()") 
-          span(class="ion-ios-chatbubble")
-          p 12
-      
-      
+  section(id='projectResults', ng-controller='HomeController', layout='column', layout-fill)
+    md-whiteframe(ng-class='{"md-whiteframe-z4": project.isUp, "md-whitframe-z1": !project.isUp}', ng-repeat='project in projects', class='frames', layout='row', layout-align='space-between center', ng-click=' ', ng-mouseenter='project.isUp = true', ng-mouseleave='project.isUp = false')
+      div(class='votes') 
+        span(class="ion-chevron-up upVote" ng-click="up(project)")
+        p {{project.upvotes - project.downvotes}}
+        span(class="ion-chevron-down downVote" ng-click="down(project)")
+      p(class='projectName', ng-click="open(project)") {{project.name}}
+      div(class='comments', ng-click="showComments()") 
+        span(class="ion-ios-chatbubble")
+        p 12

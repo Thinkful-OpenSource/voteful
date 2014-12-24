@@ -28,6 +28,11 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	
+}
+
+header {
+	color:rgba(14,133,38,1);
 }
 
 ol, ul {
@@ -78,11 +83,6 @@ header {
   font-size:1em;
 }
 
-#mainContent {
-	margin-top:25px;
-  margin-bottom:60px;
-}
-
 #logoFooter {
   width:100%;
 	text-align:center;
@@ -92,16 +92,10 @@ header {
 	z-index:70;
 }
 
-
 #logoFooter img {
 	width:10%;
   height:25px;
   margin-bottom:15px;
-}
-
-#slackLogo {
-  margin-left:10%;
-  float:left;
 }
 
 #thinkfulLogo {
@@ -134,4 +128,20 @@ header {
 
 .upVote, .downVote, .comments { 
 	cursor:pointer;
+}
+
+md-whiteframe {
+	background-color:rgba(208,165,122,1);
+	border-radius:5px;
+}
+
+.backdrop {
+	background-color:rgba(76,80,82,1)!important;
+}
+
+md-content {
+	/*background-color:transparent!important;*/
+}
+.header {
+	text-align:center;
 }
