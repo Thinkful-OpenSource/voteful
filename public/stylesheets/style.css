@@ -28,7 +28,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	
 }
 
 header {
@@ -139,9 +138,28 @@ md-whiteframe {
 	background-color:rgba(76,80,82,1)!important;
 }
 
-md-content {
-	/*background-color:transparent!important;*/
-}
 .header {
+	text-align:center;
+}
+
+.ion-android-bulb {
+	font-size:3em;
+	color:white;
+	margin-bottom:0;
+}
+
+.ideas {
+	font-size:1em;
+	position:absolute;
+	left:10%;
+	top:20px;
+	color:rgba(76,80,82,1);
+}
+
+.ideas:hover {
+	color:white;
+}
+
+.votes > p {
 	text-align:center;
 }
