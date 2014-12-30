@@ -7,7 +7,8 @@ var express = require('express'),
     bookshelf = require('./db/bookshelf'),
     routes = require('./routes/index'),
     users = require('./routes/users'),
-    projects = require('./routes/project'),
+    projects = require('./routes/projects'),
+    comments = require('./routes/comments'),
     app = express();
     
 app.set('bookshelf', bookshelf);
@@ -22,10 +23,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', routes);
 app.use('/users', users);
-app.use('/projects', projects)
+app.use('/projects', projects);
+app.use('/comments', comments);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -28,6 +28,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	background-color:rgba(76,80,82,1)!important;
 }
 
 header {
@@ -86,9 +87,6 @@ header {
   width:100%;
 	text-align:center;
 	margin-top:-30px;
-	position:fixed;
-	bottom:0;
-	z-index:70;
 }
 
 #logoFooter img {
@@ -107,7 +105,7 @@ header {
   text-align:center;
 }
 
-#projectResults {
+#projectResults, #projectDisplay {
   width:60%;
   margin:0 auto;
 }
@@ -136,6 +134,7 @@ md-whiteframe {
 
 .backdrop {
 	background-color:rgba(76,80,82,1)!important;
+	/*height:100%;*/
 }
 
 .header {
@@ -162,4 +161,21 @@ md-whiteframe {
 
 .votes > p {
 	text-align:center;
+}
+
+#projectDisplay h2 {
+	margin-top:10px;
+	font-size:1.5em;
+}
+
+#displayVotes {
+	width:100%;
+	text-align:right;
+}
+
+.close-button, .ion-ios-chatbubble {
+	cursor:pointer;
+}
+#projectDisplay > md-content {
+	padding:10px 15px;
 }

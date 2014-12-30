@@ -1,4 +1,5 @@
-var bookshelf = require('../db/bookshelf')
+var bookshelf = require('../db/bookshelf'),
+    Comment = require('./comment');
     
 module.exports = bookshelf.Model.extend({
     tableName: 'projects',
@@ -7,7 +8,10 @@ module.exports = bookshelf.Model.extend({
         downvotes: 0,
         active: true
     },
-    initalize: function(){
+    comments: function(){
+      return this.hasMany(Comment, 'project_id');  
+    },
+    initialize: function(){
         this.on('saving', this.validate);
     },
     validate: function(){

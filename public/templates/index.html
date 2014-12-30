@@ -1,0 +1,33 @@
+
+  <section id='projectResults' layout='column' layout-fill>
+    <div class="ideas" ng-click="newIdea()">
+      <div class="ion-android-bulb"></div>
+      <p> Suggest a Project</p>
+      </div>
+    </div>
+    <md-whiteframe ng-class='{"md-whiteframe-z4": project.isUp, "md-whiteframe-z1": !project.isUp}', ng-repeat='project in projects | orderBy:"upvotes - downvotes":true ', class='frames', layout='row', layout-align='space-between center',  ng-mouseenter='project.isUp = true', ng-mouseleave='project.isUp = false'>
+      <div class='votes'>
+        <span class="ion-chevron-up upVote" ng-click="up(project)"></span>
+        <p>{{getVotes(project)}}</p>
+        <span class="ion-chevron-down downVote" ng-click="down(project)"></span>
+      </div>
+      <a href="/project/{{project.id}}" class='projectName'> {{project.name}} </a>
+      <div class='comments'>
+        <span class="ion-ios-chatbubble"></span>
+        <p>{{project.commentCount}}</p>
+      </div>
+    </md-whiteframe>
+  </section>
+    <script type="text/ng-template" id="new-idea.html" ng-controller="AddProjectController">
+      <md-dialog>
+        <md-content>
+          <form ng-submit="sendIdea(project, description)">
+          <span class="icon ion-close-round close-button" ng-click="close()"></span>
+          <md-text-float ng-model="project" label="Idea" autofocus></md-text-float>
+          <md-text-float ng-model="description" label="Description"></md-text-float>
+          <md-button > Send!</md-button>
+          </form>
+        </md-content>
+      </md-dialog>
+    </script>
+    

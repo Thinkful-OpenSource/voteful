@@ -1,5 +1,4 @@
-var knex = require('knex'),
-    bookshelf = require('bookshelf')(knex);
+var bookshelf = require('../db/bookshelf');
     
 module.exports = bookshelf.Model.extend({
   tableName: 'comments',

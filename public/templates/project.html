@@ -1,0 +1,26 @@
+<section id='projectDisplay' layout='column' layout-fill>
+  <md-content>
+    <a class="icon ion-close-round close-button" href="/"></a>
+    <h2> {{project.name}} </h2>
+    <span id="displayVotes"> 
+      <p> upvotes {{project.upvotes}} </p>
+      <p> downvotes  {{project.downvotes}} </p>
+    </span>
+    <p> {{project.description}} </p>
+    <span class="ion-ios-chatbubble" ng-click="addComment()"></span>
+    <md-list>
+      <md-item ng-repeat="comment in project.comments">{{comment.text}}</md-item>
+    </md-list>
+  </md-content>      
+</section>
+<script type="text/ng-template" id="new-comment.html" ng-controller="AddCommentController">
+      <md-dialog>
+        <md-content>
+          <form ng-submit="sendComment(comment)">
+          <span class="icon ion-close-round close-button" ng-click="close()"></span>
+          <md-text-float ng-model="comment" label="Comment" autofocus></md-text-float>
+          <md-button type="submit"> Send!</md-button>
+          </form>
+        </md-content>
+      </md-dialog>
+    </script>
