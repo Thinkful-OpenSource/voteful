@@ -8,12 +8,12 @@
     <md-whiteframe ng-class='{"md-whiteframe-z4": project.isUp, "md-whiteframe-z1": !project.isUp}', ng-repeat='project in projects | orderBy:"upvotes - downvotes":true ', class='frames', layout='row', layout-align='space-between center',  ng-mouseenter='project.isUp = true', ng-mouseleave='project.isUp = false'>
       <div class='votes'>
         <span class="ion-chevron-up upVote" ng-click="up(project)"></span>
-        <p>{{getVotes(project)}}</p>
+        <p>{{project.upvotes - project.downvotes}}</p>
         <span class="ion-chevron-down downVote" ng-click="down(project)"></span>
       </div>
       <a href="/project/{{project.id}}" class='projectName'> {{project.name}} </a>
       <div class='comments'>
-        <span class="ion-ios-chatbubble"></span>
+        <span class="ion-ios-chatbubble" ng-click="showComments(project)"></span>
         <p>{{project.commentCount}}</p>
       </div>
     </md-whiteframe>
@@ -27,6 +27,16 @@
           <md-text-float ng-model="description" label="Description"></md-text-float>
           <md-button > Send!</md-button>
           </form>
+        </md-content>
+      </md-dialog>
+    </script>
+    <script type="text/ng-template" id="comments.html" ng-controller="AddCommentController">
+      <md-dialog>
+        <md-content>
+          <span class="icon ion-close-round close-button" ng-click="close()"></span>
+          <md-list ng-repeat="comment in project.comments">
+            <md-item>{{comment.text}} </md-item>
+          </md-list>
         </md-content>
       </md-dialog>
     </script>

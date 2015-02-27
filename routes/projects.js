@@ -42,12 +42,19 @@ function process_vote(id, up, ip, res){
   new Project({id:id}).fetch().then(function(model){
     var project = model;
     new Ip_Vote({ip:ip, project_id:id}).fetch().then(function(ip_vote){
-      if(ip_vote === null){ ip_vote = new Ip_Vote();}
-      else {return res.json(project.toJSON());}
       var vote = {}, gtg = false, project_model = {};
-      if(up){vote.upvotes = project.get('upvotes') + 1;}
-      else {vote.downvotes = project.get('downvotes') - 1;}
-      new Ip_Vote({ip:ip,project_id:project.id,up:up}).save().then(function(model){
+      vote.upvotes = project.get('upvotes');
+      vote.downvotes = project.get('downvotes');
+      if(ip_vote === null){ip_vote = new Ip_Vote({ip:ip,project_id:id,up:up});}
+      else {
+        if(ip_vote.get('up') === up){return res.json(project.toJSON());}
+        if(ip_vote.get('up')){vote.upvotes--;}
+        else {vote.downvotes--;}
+        ip_vote.set('up',up);
+      }
+      if(up){vote.upvotes++;}
+      else {vote.downvotes++;}
+      ip_vote.save().then(function(model){
         if(gtg){
           res.json(project_model.toJSON());
         } else {

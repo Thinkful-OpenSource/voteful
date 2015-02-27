@@ -176,6 +176,12 @@ md-whiteframe {
 .close-button, .ion-ios-chatbubble {
 	cursor:pointer;
 }
+
 #projectDisplay > md-content {
 	padding:10px 15px;
+}
+
+.commentList {
+	width:100%;
+	line-height:1.2em;
 }

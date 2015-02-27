@@ -9,7 +9,7 @@
     <p> {{project.description}} </p>
     <span class="ion-ios-chatbubble" ng-click="addComment()"></span>
     <md-list>
-      <md-item ng-repeat="comment in project.comments">{{comment.text}}</md-item>
+      <md-item class="commentList" ng-repeat="comment in project.comments"> <br/>{{comment.text}}</md-item>
     </md-list>
   </md-content>      
 </section>
